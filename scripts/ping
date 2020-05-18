@@ -1,0 +1,15 @@
+#!/bin/bash
+## ping command with error status
+
+HOST="google.com"
+ping -c 1 $HOST
+
+RETURN_CODE=$?
+
+if [ $RETURN_CODE -ne "0" ]
+then 
+    echo "$HOST is unreachable"
+    exit 1
+fi
+
+exit 0
